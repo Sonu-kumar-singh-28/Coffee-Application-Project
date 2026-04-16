@@ -36,7 +36,7 @@ private fun MyBottomNavBar() {
             R.drawable.love
         ),
         NavItem(
-            "Profile",
+            "Profil",
             R.drawable.user
         )
     )
