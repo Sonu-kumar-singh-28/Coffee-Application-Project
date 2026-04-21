@@ -1,5 +1,4 @@
 package com.assessment.portfolio.mycoffeeapplcaiton.screens.homescreen
-<<<<<<< HEAD
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -86,19 +85,9 @@ fun HomeScreen() {
                     20.dp
                 ))
             )
+
+
+             // hanglknlskdhhat erojnds pmmmm;lends
         }
     }
 }
-
-=======
-
-import androidx.compose.material3.Scaffold
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-
-
-@Preview
-@Composable
-private fun HomeScreen() {
-}
->>>>>>> dc7a1ca365487cc4beb3b47960ea927f7172a826
