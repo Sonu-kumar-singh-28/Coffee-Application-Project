@@ -85,9 +85,6 @@ fun HomeScreen() {
                     20.dp
                 ))
             )
-
-
-             // hanglknlskdhhat erojnds pmmmm;lends
         }
     }
 }
