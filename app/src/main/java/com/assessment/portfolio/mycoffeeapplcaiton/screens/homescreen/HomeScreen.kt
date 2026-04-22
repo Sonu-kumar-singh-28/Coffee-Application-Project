@@ -84,8 +84,6 @@ fun HomeScreen() {
                 modifier = Modifier.clip(RoundedCornerShape(
                     20.dp
                 ))
-
-                // gnsiksllsgjs
             )
         }
     }
