@@ -8,32 +8,32 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.assessment.portfolio.mycoffeeapplcaiton.R
+import com.assessment.portfolio.mycoffeeapplcaiton.presentations.navigation.Routes
 import com.assessment.portfolio.mycoffeeapplcaiton.ui.theme.LightBrown
 
-
 @Composable
-fun MyBottomNavBar() {
+fun MyBottomNavBar(
+    navController: NavController,
+    currentRoute: String
+) {
 
     val navItems = listOf(
-        NavItem("Home", R.drawable.home),
-        NavItem("Cart", R.drawable.cart),
-        NavItem("Favorites", R.drawable.love),
-        NavItem("Profile", R.drawable.user)
+        NavItem("Home", R.drawable.home, Routes.HomeScreen),
+        NavItem("Cart", R.drawable.cart, Routes.CartScreen),
+        NavItem("Favorites", R.drawable.love, Routes.FavoritesScreen),
+        NavItem("Profile", R.drawable.user, Routes.ProfileScreen)
     )
-
-    var selectedIndex = remember { mutableStateOf(0) }
 
     NavigationBar(
         containerColor = MaterialTheme.colorScheme.surface
     ) {
-        navItems.forEachIndexed { index, item ->
+        navItems.forEach { item ->
 
             NavigationBarItem(
                 icon = {
@@ -48,12 +48,17 @@ fun MyBottomNavBar() {
                     Text(item.title)
                 },
 
-                selected = selectedIndex.value == index,
-
                 onClick = {
-                    selectedIndex.value = index
+                    navController.navigate(item.route) {
+                        popUpTo(navController.graph.startDestinationId) {
+                            saveState = true
+                        }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
                 },
 
+                selected = item.title == currentRoute,
                 alwaysShowLabel = false,
 
                 colors = NavigationBarItemDefaults.colors(
@@ -68,8 +73,8 @@ fun MyBottomNavBar() {
     }
 }
 
-
 data class NavItem(
     val title: String,
-    val icon: Int
+    val icon: Int,
+    val route: Routes
 )
