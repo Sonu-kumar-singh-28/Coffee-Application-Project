@@ -11,6 +11,7 @@ import com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.Details
 import com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.cardScreen.CartScreen
 import com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.favouriteScreen.FavouriteScreen
 import com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.homescreen.HomeScreen
+import com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.profileScreen.ProfileScreen
 import com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.welcomescreen.WelcomeScreen
 
 @Preview
@@ -42,6 +43,7 @@ fun NavGraph() {
         }
 
         composable <Routes.ProfileScreen>{
+            ProfileScreen(navController)
         }
     }
 }
