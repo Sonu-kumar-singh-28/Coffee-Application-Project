@@ -11,7 +11,7 @@ import com.assessment.portfolio.mycoffeeapplcaiton.R
 import com.assessment.portfolio.mycoffeeapplcaiton.domain.model.Product
 
 @Composable
-fun DetailsScreens() {
+fun DetailsScreens(productId: Int, navController: NavController) {
 
     val products = listOf(
         Product(1, "Espresso", "Strong and Rich", 3.80, R.drawable.coffee_1),
@@ -23,7 +23,7 @@ fun DetailsScreens() {
         Product(7, "Iced Mocha", "Refreshing and Rich", 2.22, R.drawable.coffee_6)
     )
 
-    val selectedProduct = products.find { it.id == 1 }
+    val selectedProduct = products.find { it.id == productId }
 
     if (selectedProduct == null) {
         Text(
@@ -34,7 +34,7 @@ fun DetailsScreens() {
     }
 
     Scaffold(
-        topBar = { DetailsScreenTopAppBar() },
+        topBar = { DetailsScreenTopAppBar(navController) },
         bottomBar = { DetailsScreenBottomAppBar() }
     ) { innerPadding ->
         LazyColumn {

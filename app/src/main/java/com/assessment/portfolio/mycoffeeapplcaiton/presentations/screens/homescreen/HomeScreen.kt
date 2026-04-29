@@ -67,7 +67,7 @@ fun HomeScreen(navController: NavController) {
             )
             
             // Pass the Product
-            ProductGrid(products){
+            ProductGrid(products , navController = navController){
                 Text(text = "Location"
                     , color = Color.Gray
                     , fontSize = 16.sp

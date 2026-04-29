@@ -24,6 +24,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -36,6 +37,7 @@ import com.assessment.portfolio.mycoffeeapplcaiton.R
 import com.assessment.portfolio.mycoffeeapplcaiton.domain.model.Product
 import com.assessment.portfolio.mycoffeeapplcaiton.ui.theme.IvoryWhite
 import com.assessment.portfolio.mycoffeeapplcaiton.ui.theme.LightGray
+import org.intellij.lang.annotations.JdkConstants
 
 
 @Composable
@@ -63,13 +65,17 @@ fun ProductDetailsContainer(product: Product, innerPadding: PaddingValues) {
             color=Color.Black
         )
 
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(16.dp))
 
-        Row() {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Text(text = "Ice / Hot",
                 fontWeight = FontWeight.Medium,
                 fontSize = 16.sp,
-                color = LightGray
+                color = Color.Gray
             )
 
             Icon(painterResource(R.drawable.default_bean),
@@ -82,7 +88,7 @@ fun ProductDetailsContainer(product: Product, innerPadding: PaddingValues) {
                     .padding(6.dp)
             )
         }
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(24.dp))
 
         HorizontalDivider(
             color = Color.
@@ -102,8 +108,8 @@ fun ProductDetailsContainer(product: Product, innerPadding: PaddingValues) {
 
         Text(text = product.description,
             fontWeight = FontWeight.Medium,
-            fontSize = 16.sp,
-            color = LightGray
+            fontSize = 12.sp,
+            color = Color.Gray
         )
 
         Spacer(modifier = Modifier.height(24.dp))
@@ -115,7 +121,7 @@ fun ProductDetailsContainer(product: Product, innerPadding: PaddingValues) {
             color=Color.Black
         )
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(8.dp))
 
         var  selectedSizeText  by remember { mutableStateOf("M") }
 
@@ -125,10 +131,9 @@ fun ProductDetailsContainer(product: Product, innerPadding: PaddingValues) {
             listOf("S","M","L").forEach { size->
                 SelectSizeChip(
                     sizeText = size,
-                    selected =selectedSizeText == size
-                    , onClick = {selectedSizeText =size},
-                    Modifier.weight(1f)
-                        .height(46.dp)
+                    selected = selectedSizeText == size,
+                    onClick = { selectedSizeText = size },
+                    Modifier.weight(1f).height(46.dp)
                 )
             }
         }

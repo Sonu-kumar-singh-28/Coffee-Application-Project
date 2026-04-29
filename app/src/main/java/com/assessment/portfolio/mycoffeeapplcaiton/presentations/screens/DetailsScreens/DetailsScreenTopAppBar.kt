@@ -19,7 +19,7 @@ import com.assessment.portfolio.mycoffeeapplcaiton.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailsScreenTopAppBar() {
+fun DetailsScreenTopAppBar(navController: NavController) {
 
     TopAppBar(
         title = {
@@ -44,13 +44,15 @@ fun DetailsScreenTopAppBar() {
         navigationIcon = {
             IconButton(
                 onClick = {
-
+                    navController.navigateUp()
                 }
             ) {
                 Icon(
                     painter = painterResource(R.drawable.ic_arrowback),
                     contentDescription = "Back",
-                    modifier = Modifier.padding(start = 12.dp)
+                    modifier = Modifier.padding(start = 12.dp).clickable(onClick = {
+                        navController.navigateUp()
+                    })
                 )
             }
         }

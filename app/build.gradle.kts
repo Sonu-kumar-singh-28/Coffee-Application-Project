@@ -62,6 +62,7 @@ dependencies {
     val nav_version = "2.9.8"
 
     implementation("androidx.navigation:navigation-compose:$nav_version")
-
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")
+    implementation("androidx.navigation:navigation-compose:2.8.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
 }
