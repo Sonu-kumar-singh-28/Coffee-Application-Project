@@ -1,4 +1,4 @@
-package com.assessment.portfolio.mycoffeeapplcaiton.screens.homescreen
+package com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.homescreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

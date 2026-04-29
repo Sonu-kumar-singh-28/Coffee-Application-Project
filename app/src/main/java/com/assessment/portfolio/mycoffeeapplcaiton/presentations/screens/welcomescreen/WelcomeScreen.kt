@@ -1,4 +1,4 @@
-package com.assessment.portfolio.mycoffeeapplcaiton.screens.welcomescreen
+package com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.welcomescreen
 
 import android.R.attr.onClick
 import androidx.compose.foundation.Image
@@ -23,18 +23,20 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.assessment.portfolio.mycoffeeapplcaiton.R
+import com.assessment.portfolio.mycoffeeapplcaiton.presentations.navigation.Routes
 import com.assessment.portfolio.mycoffeeapplcaiton.ui.theme.LightBrown
 
 
 
 
-@Preview
 @Composable
-private fun WelcomeScreen() {
+fun WelcomeScreen(navController: NavController) {
 
     Box(modifier = Modifier.fillMaxSize().background(color = Color.Black)) {
         Image(painter = painterResource(R.drawable.coffee),
@@ -65,7 +67,9 @@ private fun WelcomeScreen() {
             Spacer(Modifier.height(16.dp))
 
 
-            Button(onClick ={},
+            Button(onClick =
+                {navController.navigate(Routes.HomeScreen)
+                },
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(16.dp),
                 colors = ButtonDefaults.buttonColors(
@@ -73,7 +77,8 @@ private fun WelcomeScreen() {
                 )
                 ) {
                 Text("Get Started",
-                    fontSize = 15.sp)
+                    fontSize = 15.sp,
+                    color = Color.White)
             }
         }
     }

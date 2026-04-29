@@ -1,4 +1,4 @@
-package com.assessment.portfolio.mycoffeeapplcaiton.screens.ui_component
+package com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.ui_component
 
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
