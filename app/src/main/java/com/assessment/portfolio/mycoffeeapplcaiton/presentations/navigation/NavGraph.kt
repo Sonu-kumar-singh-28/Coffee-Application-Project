@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.DetailsScreens.DetailsScreens
 import com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.cardScreen.CartScreen
+import com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.favouriteScreen.FavouriteScreen
 import com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.homescreen.HomeScreen
 import com.assessment.portfolio.mycoffeeapplcaiton.presentations.screens.welcomescreen.WelcomeScreen
 
@@ -37,7 +38,7 @@ fun NavGraph() {
         }
 
         composable <Routes.FavoritesScreen>{
-
+            FavouriteScreen(navController)
         }
 
         composable <Routes.ProfileScreen>{
