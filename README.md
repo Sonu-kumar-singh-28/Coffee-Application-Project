@@ -1,4 +1,4 @@
-# ☕ My Coffee Application.
+# ☕ My Coffee Application
 
 A modern Coffee Ordering Android Application built using **Jetpack Compose** and **Kotlin**.  
 This app provides a smooth coffee browsing and ordering experience with clean UI and multiple screens.
